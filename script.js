@@ -151,7 +151,27 @@ confirmTransfer();
 /*Ejercicio 8: Validación de formulario
 • Crea una función async llamada validateForm que reciba un texto como entrada.
 • Si el texto no está vacío, devuelve 'Formulario válido'.
-• Si el texto está vacío, lanza un error con 'El formulario no puede estar vacío'.*/
+• Si el texto está vacío, lanza un error con 'El formulario no puede estar vacío'.
+
+async function validateForm(texto) {
+  if (texto.trim() != "") {
+    return "Formulario válido";
+  } else {
+    throw "El formulario no puede estar vacío";
+  }
+}
+
+async function useForm() {
+  try {
+    const resultado = await validateForm("hola");
+    console.log(resultado);
+  } catch (error) {
+    console.log("Error:", error);
+  }
+}
+
+useForm();
+*/
 
 /*Ejercicio 9: Carga de un perfil de usuario
 • Crea una función async llamada loadProfile.
