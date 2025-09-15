@@ -24,6 +24,24 @@ eatPizza();
 • Crea una función async llamada useFile que use await para esperar a que downloadFile se resuelva.
 • Dentro de useFile, imprime el resultado en consola. */
 
+const downloadFile = new Promise((resolve, reject) => {
+  console.log("Descargando archivo...");
+  setTimeout(() => {
+    resolve("Se descargó el archivo");
+    reject("No se descargó");
+  }, 2000);
+});
+
+async function useFile() {
+  try {
+    const resultado = await downloadFile;
+    console.log(resultado);
+  } catch (err) {
+    console.log("Error", err);
+  }
+}
+
+useFile();
 /*Ejercicio 3: Reproducir una película en streaming
 • Crea una función async llamada playMovie.
 • Dentro de la función, usa await para esperar 4 segundos simulando el buffer.
