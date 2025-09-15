@@ -22,7 +22,7 @@ eatPizza();
 /*Ejercicio 2: Descargar un archivo
 • Crea una promesa llamada downloadFile que simule la descarga de un archivo y se resuelva en 2 segundos con el mensaje: 'Archivo descargado con éxito'.
 • Crea una función async llamada useFile que use await para esperar a que downloadFile se resuelva.
-• Dentro de useFile, imprime el resultado en consola. */
+• Dentro de useFile, imprime el resultado en consola. 
 
 const downloadFile = new Promise((resolve, reject) => {
   console.log("Descargando archivo...");
@@ -42,10 +42,29 @@ async function useFile() {
 }
 
 useFile();
+*/
+
 /*Ejercicio 3: Reproducir una película en streaming
 • Crea una función async llamada playMovie.
 • Dentro de la función, usa await para esperar 4 segundos simulando el buffer.
-• Devuelve el mensaje: 'La película empezó a reproducirse'.*/
+• Devuelve el mensaje: 'La película empezó a reproducirse'.
+
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+async function playMovie() {
+  try {
+    console.log("La pelicula está cargando");
+    await delay(4000);
+    console.log("La pelicula comenzó a reproducirse");
+  } catch (err) {
+    console.log("Error al reproducir la pelicula", err);
+  }
+}
+
+playMovie();
+
+*/
 
 /*Ejercicio 4: Temporizador de cuenta regresiva
 • Crea una función async llamada countdownTimer que simule una cuenta regresiva de 5 segundos.
