@@ -132,7 +132,21 @@ readSensorData();
 /*Ejercicio 7: Operación bancaria con demora
 • Crea una promesa llamada makeTransfer que se resuelva después de 3 segundos con el mensaje: 'Transferencia realizada con éxito'.
 • Crea una función async llamada confirmTransfer que use await para esperar a que makeTransfer se resuelva.
-• Dentro de confirmTransfer, imprime el resultado en consola.*/
+• Dentro de confirmTransfer, imprime el resultado en consola.
+
+const makeTransfer = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Transferencia realizada con éxito");
+  }, 3000);
+});
+
+async function confirmTransfer() {
+  const resultado = await makeTransfer;
+  console.log(resultado);
+}
+
+confirmTransfer();
+*/
 
 /*Ejercicio 8: Validación de formulario
 • Crea una función async llamada validateForm que reciba un texto como entrada.
