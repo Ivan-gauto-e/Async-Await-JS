@@ -84,7 +84,30 @@ countdownTimer();
 /*Ejercicio 5: Simular un inicio de sesión
 • Crea una función async llamada loginUser que reciba usuario y contraseña.
 • Si los datos son correctos, devuelve 'Acceso permitido'.
-• Si los datos son incorrectos, lanza un error con 'Credenciales incorrectas'.*/
+• Si los datos son incorrectos, lanza un error con 'Credenciales incorrectas'.
+
+async function loginUser(usuario, contraseña) {
+  return new Promise((resolve, reject) => {
+    const usuarioCorrecto = "papupro";
+    const contraseñaCorrecta = "momoladinastia";
+    if (usuario === usuarioCorrecto && contraseña === contraseñaCorrecta) {
+      resolve("Acceso permitido");
+    } else {
+      reject("Credenciales incorrectas");
+    }
+  });
+}
+
+async function playLogin() {
+  try {
+    const mensaje = await loginUser("papupro", "momoladinastia");
+    console.log(mensaje);
+  } catch (error) {
+    console.log(error);
+  }
+}
+playLogin();
+*/
 
 /*Ejercicio 6: Procesar datos de sensores
 • Crea una promesa llamada sensorPromise que después de 2 segundos genere un número aleatorio entre 0 y 100.
