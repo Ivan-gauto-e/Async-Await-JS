@@ -68,7 +68,18 @@ playMovie();
 
 /*Ejercicio 4: Temporizador de cuenta regresiva
 • Crea una función async llamada countdownTimer que simule una cuenta regresiva de 5 segundos.
-• Cuando finalice, debe devolver el mensaje: 'Tiempo terminado'.*/
+• Cuando finalice, debe devolver el mensaje: 'Tiempo terminado'.
+
+async function countdownTimer() {
+  for (let i = 5; i > 0; i--) {
+    console.log(i);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+  }
+  console.log("Tiempo terminado");
+}
+
+countdownTimer();
+*/
 
 /*Ejercicio 5: Simular un inicio de sesión
 • Crea una función async llamada loginUser que reciba usuario y contraseña.
