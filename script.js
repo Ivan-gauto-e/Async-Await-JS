@@ -1,7 +1,23 @@
 /*Ejercicio 1: Pedir una pizza
 • Crea una promesa llamada orderPizza que se resuelva después de 3 segundos con el mensaje: 'La pizza llegó'.
 • Crea una función async llamada eatPizza que use await para esperar a que orderPizza se resuelva.
-• Dentro de eatPizza, imprime primero el resultado de la promesa y luego el mensaje: 'El usuario está comiendo la pizza'.*/
+• Dentro de eatPizza, imprime primero el resultado de la promesa y luego el mensaje: 'El usuario está comiendo la pizza'.
+
+const orderPizza = new Promise((resolve, reject) => {
+  console.log("Ordenando pizza");
+  setTimeout(() => {
+    resolve("La pizza llegó");
+  }, 3000);
+});
+
+async function eatPizza() {
+  const resultado = await orderPizza;
+  console.log(resultado);
+  console.log("El usuario está comiendo la pizza");
+}
+
+eatPizza();
+*/
 
 /*Ejercicio 2: Descargar un archivo
 • Crea una promesa llamada downloadFile que simule la descarga de un archivo y se resuelva en 2 segundos con el mensaje: 'Archivo descargado con éxito'.
