@@ -112,7 +112,22 @@ playLogin();
 /*Ejercicio 6: Procesar datos de sensores
 • Crea una promesa llamada sensorPromise que después de 2 segundos genere un número aleatorio entre 0 y 100.
 • Crea una función async llamada readSensorData que use await para esperar a que sensorPromise se resuelva.
-• Dentro de readSensorData, imprime en consola el número obtenido.*/
+• Dentro de readSensorData, imprime en consola el número obtenido.
+
+const sensorPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    const numero = Math.floor(Math.random() * 101);
+    resolve(numero);
+  }, 2000);
+});
+
+async function readSensorData() {
+  const numeroRandom = await sensorPromise;
+  console.log("El numero random es:", numeroRandom);
+}
+
+readSensorData();
+*/
 
 /*Ejercicio 7: Operación bancaria con demora
 • Crea una promesa llamada makeTransfer que se resuelva después de 3 segundos con el mensaje: 'Transferencia realizada con éxito'.
